@@ -1,0 +1,76 @@
+set nocompatible
+set encoding=utf8
+
+" Set line number on.
+" set number
+" Set relative number on
+set rnu
+" Make Space the leade
+let mapleader = ","
+
+" Don't close buffers when switching. Preserve history and changes.
+set hidden
+
+" Map F4 to :buffers.
+"noremap <F4> <Esc>:buffers<CR>:buffer<Space>
+
+" Map <Leader>w to :w<Enter>
+map <Leader>w :w<CR>
+imap ,w <Esc>:w<CR>
+
+
+" Mapping for more window navigation
+map <Leader>h <c-w>h
+map <Leader>j <c-w>j
+map <Leader>k <c-w>k
+map <Leader>l <c-w>l
+
+" Map <Leader>t to gT this will cycle through the tabs.
+map <Leader>t gT
+
+" Set a vertical line at 80th col.
+hi ColorColumn ctermbg=LightGrey
+set colorcolumn=80 
+
+" Incremental search
+set incsearch
+
+" Turn wrap off. 
+set wrap!
+
+
+" Remap ; to :. This eliminates the need to press SHIFT when saving 
+" and other operations.
+nnoremap ; :
+
+map <Space> viw
+
+" Insert a ; at the end of the current line and go to new line
+imap <F11> <C-o>A;
+" Insert a ; at end of current line from normal mode
+map <F11> i<C-o>A;
+
+" Map .. to -> for PHP development
+imap <Leader>. ->
+
+" Map ,e to move cursor to end of line in insert mode.
+imap <Leader>e <ESC>g_a
+
+" Search and replace the current word.
+nnoremap <Leader>s :%s/\<<C-r><C-w>\>/
+
+" Highlighting current line.
+set cursorline
+hi CursorLine cterm=none ctermbg=LightGrey ctermfg=None
+
+" Show keys being pressed in normal mode.
+set showcmd
+
+" Make % work as expected.
+map % <Action>(EditorMatchBrace)
+
+" Make <leader> e open the same window as double shift but for files.
+map <Leader>e <Action>(SearchEverywhere)
+
+" using join provided by IDEA https://github.com/JetBrains/ideavim/wiki/%22ideajoin%22-examples
+set ideajoin
