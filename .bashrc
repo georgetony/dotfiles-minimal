@@ -128,3 +128,5 @@ parse_git_branch() {
 }
 export PS1=$PS1"\[\e[91m\]\$(parse_git_branch)\[\e[00m\]$ "
 export DISPLAY=:0
+export PATH=$PATH:/sbin
+
