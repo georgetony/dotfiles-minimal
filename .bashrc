@@ -2,6 +2,9 @@
 # see /usr/share/doc/bash/examples/startup-files (in the package bash-doc)
 # for examples
 
+# Function to check if current user is root
+is_user_root () { [ "$(id -u)" -eq 0 ]; } 
+
 # If not running interactively, don't do anything
 [ -z "$PS1" ] && return
 
@@ -59,6 +62,13 @@ if [ "$color_prompt" = yes ]; then
 else
     PS1='${debian_chroot:+($debian_chroot)}\u@\h:\w '
 fi
+
+# Change to red if the current user is root
+if is_user_root; then
+    PS1="\[\e[01;31m\]\e[00m\]"
+    PS1='${debian_chroot:+($debian_chroot)}\[\033[01;31m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\] '
+fi
+
 unset color_prompt force_color_prompt
 
 # If this is an xterm set the title to user@host:dir
