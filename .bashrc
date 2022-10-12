@@ -141,4 +141,5 @@ export DISPLAY=:0
 export PATH=$PATH:/sbin
 # Adding location of snap packages
 export PATH=$PATH:/snap/bin
-
+# Adding /home/olimex/.local/bin to path. This is used by PIP
+export PATH=$PATH:~/.local/bin
