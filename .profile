@@ -20,3 +20,5 @@ fi
 if [ -d "$HOME/bin" ] ; then
     PATH="$HOME/bin:$PATH"
 fi
+# For rust and cargo
+. "$HOME/.cargo/env"
