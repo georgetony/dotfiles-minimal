@@ -144,3 +144,10 @@ export PATH=$PATH:/sbin
 export PATH=$PATH:/snap/bin
 # Adding /home/olimex/.local/bin to path. This is used by PIP
 export PATH=$PATH:~/.local/bin
+
+# For NVM
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+# For Rust and Cargo?
+. "$HOME/.cargo/env"
