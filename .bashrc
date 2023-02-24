@@ -130,13 +130,24 @@ fi
 # Copy current directory to clipboard
 alias cpwd="pwd | xclip -selection clipboard"
 
-
 # Display current git branch on prompt.
-# From: https://thucnc.medium.com/how-to-show-current-git-branch-with-colors-in-bash-prompt-380d05a24745
-parse_git_branch() {
-    git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/(\1)/'
+# Save prompt so far to a temp variable
+PS1_TEMP=$PS1
+
+function parse_git_branch() {
+    local branch
+    branch=$(git branch 2>/dev/null | sed -n '/^\*/s/^\* //p')
+    if [ -n "$branch" ]; then
+        if git diff-index --quiet HEAD --; then
+            echo "\[\e[32m\]($branch)\[\e[0m\]"
+        else
+            echo "\[\e[31m\]($branch)\[\e[0m\]"
+        fi
+    fi
 }
-export PS1=$PS1"\[\e[91m\]\$(parse_git_branch)\[\e[00m\]$ "
+PROMPT_COMMAND='PS1="$PS1_TEMP$(parse_git_branch) $ "'
+# End of git branch on prompt
+
 export DISPLAY=:0
 export PATH=$PATH:/sbin
 # Adding location of snap packages
