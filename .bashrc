@@ -138,7 +138,9 @@ function parse_git_branch() {
     local branch
     branch=$(git branch 2>/dev/null | sed -n '/^\*/s/^\* //p')
     if [ -n "$branch" ]; then
-        if git diff-index --quiet HEAD --; then
+        if git status --porcelain | grep -q "^??"; then
+            echo "\[\e[31m\]($branch)\[\e[0m\]"
+        elif git diff-index --quiet HEAD --; then
             echo "\[\e[32m\]($branch)\[\e[0m\]"
         else
             echo "\[\e[31m\]($branch)\[\e[0m\]"
