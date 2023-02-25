@@ -111,6 +111,12 @@ alias tma='tmux attach -d -t '
 alias tml='tmux list-sessions'
 alias tmn='tmux -2 new -s '
 
+# Alias vim to nvim
+alias vim='nvim'
+alias vi='nvim'
+# Alias to old vim
+alias oldvim='/usr/bin/vim'
+
 # Alias definitions.
 # You may want to put all your additions into a separate file like
 # ~/.bash_aliases, instead of adding them here directly.
