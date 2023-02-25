@@ -153,7 +153,7 @@ function parse_git_branch() {
         fi
     fi
 }
-PROMPT_COMMAND='PS1="$PS1_TEMP$(parse_git_branch)\n $ "'
+PROMPT_COMMAND='PS1="$PS1_TEMP$(parse_git_branch)\n \[$(tput sgr0)\]\[$(tput bold)$(tput setaf 2)\]>> \$ \[$(tput sgr0)\] "'
 # End of git branch on prompt
 
 export DISPLAY=:0
