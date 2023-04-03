@@ -21,4 +21,8 @@ if [ -d "$HOME/bin" ] ; then
     PATH="$HOME/bin:$PATH"
 fi
 # For rust and cargo
-. "$HOME/.cargo/env"
+# Check if "$HOME/.cargo/env" exists
+if [ -f "$HOME/.cargo/env" ]; then
+    . "$HOME/.cargo/env"
+fi
+
