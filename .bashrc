@@ -112,10 +112,10 @@ alias tml='tmux list-sessions'
 alias tmn='tmux -2 new -s '
 
 # Alias vim to nvim
-alias vim='nvim'
-alias vi='nvim'
+# alias vim='nvim'
+# alias vi='nvim'
 # Alias to old vim
-alias oldvim='/usr/bin/vim'
+# alias oldvim='/usr/bin/vim'
 
 # Alias definitions.
 # You may want to put all your additions into a separate file like
