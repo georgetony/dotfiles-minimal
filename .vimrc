@@ -47,16 +47,6 @@ map <Leader>j <c-w>j
 map <Leader>k <c-w>k
 map <Leader>l <c-w>l
 
-" Resizing the window
-" Equalize windows
-" map <Leader>w= <c-w>=
-" Increase / Decrease width of the current window
-" map <Leader>wh <c-w>>
-" map <Leader>wl <c-w><
-" Increase / Decrease height of the current window
-" map <Leader>wk <c-w>+
-" map <Leader>wj <c-w>-
-
 nnoremap <c-j> :resize +2<CR>
 nnoremap <c-k> :resize -2<CR>
 nnoremap <c-h> :vertical resize -2<CR>
