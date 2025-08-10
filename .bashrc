@@ -156,7 +156,11 @@ function parse_git_branch() {
 PROMPT_COMMAND='PS1="$PS1_TEMP$(parse_git_branch)\n \[$(tput sgr0)\]\[$(tput bold)$(tput setaf 2)\]>> \$ \[$(tput sgr0)\] "'
 # End of git branch on prompt
 
-export DISPLAY=:0
+#export DISPLAY=:0
+#
+# Setting Display to :99 for Xvfb and testing with Playwright
+export DISPLAY=:99
+
 export PATH=$PATH:/sbin
 # Adding location of snap packages
 export PATH=$PATH:/snap/bin
@@ -167,3 +171,5 @@ export PATH=$PATH:~/.local/bin
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+alias claude="/home/deb/.claude/local/claude"

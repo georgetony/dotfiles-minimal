@@ -99,6 +99,8 @@ Plug 'junegunn/vim-easy-align'
 Plug 'vim-scripts/AutoComplPop'
 " Haproxy config syntax highlight
 Plug 'Joorem/vim-haproxy'
+Plug 'github/copilot.vim'
+Plug 'yegappan/taglist'
 call plug#end()
 
 " NERDTree mappings
@@ -114,7 +116,7 @@ set omnifunc=syntaxcomplete
 set wrap!
 
 " Toggle the function list
-map <F2> :Flisttoggle<CR>
+map <F2> :TlistToggle<CR>
 
 " Paste mode toggle.
 set pastetoggle=<F2>
